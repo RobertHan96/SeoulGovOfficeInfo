@@ -10,15 +10,29 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setupEvents()
 
+    }
+
+    fun setupEvents() {
         taxOfficeIntroBtn.setOnClickListener {
             val taxOfficeIntroIntent = Intent(this, OfficeIntroActivity::class.java)
             startActivity(taxOfficeIntroIntent)
         }
 
         guOfficeIntroBtn.setOnClickListener {
-            val guOfficeIntroIntet = Intent(this, OfficeIntroActivity::class.java)
-            startActivity(guOfficeIntroIntet)
+            val guOfficeIntroIntent = Intent(this, OfficeIntroActivity::class.java)
+            startActivity(guOfficeIntroIntent)
+        }
+
+        findGuOfficeBtn.setOnClickListener {
+            val guOfficeListIntent = Intent(this, OfficeLocationsActivity::class.java)
+            startActivity(guOfficeListIntent)
+        }
+
+        findTaxOfficeBtn.setOnClickListener {
+            val taxOfficeListIntent = Intent(this, OfficeLocationsActivity::class.java)
+            startActivity(taxOfficeListIntent)
         }
     }
 }
