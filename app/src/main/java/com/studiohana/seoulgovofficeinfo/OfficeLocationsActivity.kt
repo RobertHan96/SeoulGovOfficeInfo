@@ -1,8 +1,11 @@
 package com.studiohana.seoulgovofficeinfo
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.studiohana.seoulgovofficeinfo.adapters.OfficeAdapters
 import com.studiohana.seoulgovofficeinfo.datas.Office
 import kotlinx.android.synthetic.main.activity_office_locations.*
@@ -31,19 +34,22 @@ class OfficeLocationsActivity : BaseActivity() {
         officeList.add(Office("강남", "02-450-1500","서울시 광진구 자양동", "www.naver.com", 37.5, 2.4))
         officeList.add(Office("송파", "02-450-1500","서울시 광진구 자양동", "www.naver.com", 37.5, 2.4))
 
-        mOfficeAdapter = OfficeAdapters(mContext, officeList)
+        mOfficeAdapter = OfficeAdapters(mContext, officeList) { office ->
+            Toast.makeText(mContext, "${office.name}구가 클릭됨", Toast.LENGTH_SHORT).show()
+        }
+
         officeRecyclerView.adapter = mOfficeAdapter
-        val lm = GridLayoutManager(mContext,4)
+        val lm = GridLayoutManager(mContext,4, RecyclerView.VERTICAL, false)
         officeRecyclerView.layoutManager = lm
         officeRecyclerView.setHasFixedSize(true)
 
-
+    }
 //        officeListsWeb.apply {
 //            settings.javaScriptEnabled = true
 //            webViewClient = WebViewClient()
 //        }
 //        officeListsWeb.loadUrl("https://www.google.com")
 
-    }
+
 
 }
