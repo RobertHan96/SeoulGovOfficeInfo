@@ -5,16 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setupEvents()
-
+        setValues()
     }
 
-    fun setupEvents() {
+    override fun setupEvents() {
         taxOfficeIntroBtn.setOnClickListener {
             val taxOfficeIntroIntent = Intent(this, OfficeIntroActivity::class.java)
             startActivity(taxOfficeIntroIntent)
@@ -34,5 +34,8 @@ class MainActivity : AppCompatActivity() {
             val taxOfficeListIntent = Intent(this, OfficeLocationsActivity::class.java)
             startActivity(taxOfficeListIntent)
         }
+    }
+
+    override fun setValues() {
     }
 }

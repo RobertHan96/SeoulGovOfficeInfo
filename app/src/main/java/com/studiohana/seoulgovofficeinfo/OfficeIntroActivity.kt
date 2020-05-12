@@ -1,8 +1,6 @@
 package com.studiohana.seoulgovofficeinfo
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.animation.AnimationUtils
 import com.studiohana.seoulgovofficeinfo.adapters.TaskAdapters
 import com.studiohana.seoulgovofficeinfo.datas.OfficeTask
 import kotlinx.android.synthetic.main.activity_office_intro.*
