@@ -31,14 +31,5 @@
         android:layout_weight="9">
 
     </androidx.recyclerview.widget.RecyclerView>
-<!--    <fragment-->
-<!--        android:id="@+id/map_fragment"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:name="com.naver.maps.map.MapFragment"/>-->
-<!--    <WebView-->
-<!--        android:id="@+id/officeListsWeb"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"/>-->
 
 </LinearLayout>

@@ -35,7 +35,9 @@ class OfficeLocationsActivity : BaseActivity() {
         officeList.add(Office("송파", "02-450-1500","서울시 광진구 자양동", "www.naver.com", 37.5, 2.4))
 
         mOfficeAdapter = OfficeAdapters(mContext, officeList) { office ->
-            Toast.makeText(mContext, "${office.name}구가 클릭됨", Toast.LENGTH_SHORT).show()
+            runOnUiThread {
+                Toast.makeText(mContext, "${office.name}구가 클릭됨", Toast.LENGTH_SHORT).show()
+            }
         }
 
         officeRecyclerView.adapter = mOfficeAdapter
@@ -44,12 +46,5 @@ class OfficeLocationsActivity : BaseActivity() {
         officeRecyclerView.setHasFixedSize(true)
 
     }
-//        officeListsWeb.apply {
-//            settings.javaScriptEnabled = true
-//            webViewClient = WebViewClient()
-//        }
-//        officeListsWeb.loadUrl("https://www.google.com")
-
-
 
 }

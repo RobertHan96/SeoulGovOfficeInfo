@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">SeoulGovOfficeInfo</string>
+    <string name="main_view_name">서울시 관공서 정보</string>
+    <string name="locations_view_name">지역별 관공서 정보</string>
+    <string name="task_view_name">주요 담당 업무</string>
+    <string name="find_tax_office">세무서 찾기</string>
+    <string name="find_gu_office">구청 찾기</string>
+    <string name="gu_office_task">구청 주요 업무</string>
+    <string name="tax_office_task">세무서 주요 업무</string>
+    <string name="office_detail_name">구</string>
+    <string name="office_detail_tel">TEL.02-123-4567</string>
+    <string name="office_detail_address">서울시 OO구</string>
+
 </resources>

@@ -35,7 +35,7 @@ class OfficeAdapters (val mContext: Context, val mList : ArrayList<Office>, val 
                 officeName.text = office.name
             }
 
-            itemView.setOnClickListener { itemClick(office) }
+            itemView.setOnClickListener { itemClick }
         }
     }
 }
