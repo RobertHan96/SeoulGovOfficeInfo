@@ -1,5 +1,6 @@
 package com.studiohana.seoulgovofficeinfo
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -28,22 +29,15 @@ class OfficeLocationsActivity : BaseActivity() {
     }
 
     override fun setValues() {
+        val officeDetailView = Intent(mContext, OfficeDetailActivity::class.java)
         val previousViewId = intent.getIntExtra("id",1)
         if (previousViewId == 1) {
-            mOfficeAdapter = OfficeAdapters(mContext, Office.shared.guList) { office ->
-                runOnUiThread {
-                    Toast.makeText(mContext, "${office.name}구가 클릭됨", Toast.LENGTH_SHORT).show()
-                }
-            }
+            mOfficeAdapter = OfficeAdapters(mContext, Office.shared.guList)
             val lm = GridLayoutManager(mContext,4)
             officeRecyclerView.layoutManager = lm
 
         } else {
-            mOfficeAdapter = OfficeAdapters(mContext, Office.shared.taxList) { office ->
-                runOnUiThread {
-                    Toast.makeText(mContext, "${office.name}구가 클릭됨", Toast.LENGTH_SHORT).show()
-                }
-            }
+            mOfficeAdapter = OfficeAdapters(mContext, Office.shared.taxList)
             val lm = GridLayoutManager(mContext,3)
             officeRecyclerView.layoutManager = lm
         }

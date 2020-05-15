@@ -1,21 +1,26 @@
 package com.studiohana.seoulgovofficeinfo.adapters
 
 import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.studiohana.seoulgovofficeinfo.OfficeDetailActivity
 import com.studiohana.seoulgovofficeinfo.R
 import com.studiohana.seoulgovofficeinfo.datas.Office
 import com.studiohana.seoulgovofficeinfo.datas.OfficeTask
 
-class OfficeAdapters (val mContext: Context, val mList : ArrayList<Office>, val itemClick : (Office) -> Unit ) : RecyclerView.Adapter<OfficeAdapters.Holder>() {
+class OfficeAdapters (val mContext: Context, val mList : ArrayList<Office>) :
+    RecyclerView.Adapter<OfficeAdapters.Holder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OfficeAdapters.Holder {
         val view = LayoutInflater.from(mContext).inflate(R.layout.office_name_item, parent, false)
-        return  Holder(view, itemClick)
+        return  Holder(view)
 
     }
 
@@ -25,17 +30,19 @@ class OfficeAdapters (val mContext: Context, val mList : ArrayList<Office>, val 
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder?.bind(mList[position], mContext)
+        holder.itemView.setOnClickListener {
+            Log.d("테스트", holder.officeName.text.toString())
+        }
     }
 
-    inner class Holder(itemView: View?, itemClick: (Office) -> Unit) : RecyclerView.ViewHolder(itemView!!) {
-        val officeName = itemView?.findViewById<TextView>(R.id.officeNameText)
+
+    inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val officeName = itemView.findViewById<TextView>(R.id.officeNameText)
 
         fun bind (office: Office, context: Context) {
             if (officeName != null) {
                 officeName.text = office.name
             }
-
-            itemView.setOnClickListener { itemClick }
         }
     }
 }
