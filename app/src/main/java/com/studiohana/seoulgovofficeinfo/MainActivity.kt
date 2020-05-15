@@ -16,22 +16,26 @@ class MainActivity : BaseActivity() {
 
     override fun setupEvents() {
         taxOfficeIntroBtn.setOnClickListener {
-            val taxOfficeIntroIntent = Intent(this, OfficeIntroActivity::class.java)
+            val taxOfficeIntroIntent = Intent(mContext, OfficeIntroActivity::class.java)
+            taxOfficeIntroIntent.putExtra("id",2)
             startActivity(taxOfficeIntroIntent)
         }
 
         guOfficeIntroBtn.setOnClickListener {
-            val guOfficeIntroIntent = Intent(this, OfficeIntroActivity::class.java)
+            val guOfficeIntroIntent = Intent(mContext, OfficeIntroActivity::class.java)
+            guOfficeIntroIntent.putExtra("id",1)
             startActivity(guOfficeIntroIntent)
         }
 
         findGuOfficeBtn.setOnClickListener {
-            val guOfficeListIntent = Intent(this, OfficeLocationsActivity::class.java)
+            val guOfficeListIntent = Intent(mContext, OfficeLocationsActivity::class.java)
+            guOfficeListIntent.putExtra("id", 1)
             startActivity(guOfficeListIntent)
         }
 
         findTaxOfficeBtn.setOnClickListener {
-            val taxOfficeListIntent = Intent(this, OfficeLocationsActivity::class.java)
+            val taxOfficeListIntent = Intent(mContext, OfficeLocationsActivity::class.java)
+            taxOfficeListIntent.putExtra("id",2)
             startActivity(taxOfficeListIntent)
         }
     }

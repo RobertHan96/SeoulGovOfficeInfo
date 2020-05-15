@@ -28,21 +28,26 @@ class OfficeLocationsActivity : BaseActivity() {
     }
 
     override fun setValues() {
-        officeList.add(Office("광진", "02-50-1500","서울시 광진구 자양동", "www.naver.com", 37.5, 2.4))
-        officeList.add(Office("성동", "02-450-1500","서울시 광진구 자양동", "www.naver.com", 37.5, 2.4))
-        officeList.add(Office("서초", "02-450-1500","서울시 광진구 자양동", "www.naver.com", 37.5, 2.4))
-        officeList.add(Office("강남", "02-450-1500","서울시 광진구 자양동", "www.naver.com", 37.5, 2.4))
-        officeList.add(Office("송파", "02-450-1500","서울시 광진구 자양동", "www.naver.com", 37.5, 2.4))
-
-        mOfficeAdapter = OfficeAdapters(mContext, officeList) { office ->
-            runOnUiThread {
-                Toast.makeText(mContext, "${office.name}구가 클릭됨", Toast.LENGTH_SHORT).show()
+        val previousViewId = intent.getIntExtra("id",1)
+        if (previousViewId == 1) {
+            mOfficeAdapter = OfficeAdapters(mContext, Office.shared.guList) { office ->
+                runOnUiThread {
+                    Toast.makeText(mContext, "${office.name}구가 클릭됨", Toast.LENGTH_SHORT).show()
+                }
             }
-        }
+            val lm = GridLayoutManager(mContext,4)
+            officeRecyclerView.layoutManager = lm
 
+        } else {
+            mOfficeAdapter = OfficeAdapters(mContext, Office.shared.taxList) { office ->
+                runOnUiThread {
+                    Toast.makeText(mContext, "${office.name}구가 클릭됨", Toast.LENGTH_SHORT).show()
+                }
+            }
+            val lm = GridLayoutManager(mContext,3)
+            officeRecyclerView.layoutManager = lm
+        }
         officeRecyclerView.adapter = mOfficeAdapter
-        val lm = GridLayoutManager(mContext,4, RecyclerView.VERTICAL, false)
-        officeRecyclerView.layoutManager = lm
         officeRecyclerView.setHasFixedSize(true)
 
     }

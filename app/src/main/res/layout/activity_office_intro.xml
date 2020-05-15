@@ -14,7 +14,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="주요 담당 업무"
+        android:text="@string/task_view_name"
         android:padding="4dp"
         android:background="@drawable/title_btn_background"
         android:textAlignment="center"
