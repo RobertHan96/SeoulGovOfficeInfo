@@ -3,6 +3,7 @@ package com.studiohana.seoulgovofficeinfo
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,14 +34,34 @@ class OfficeLocationsActivity : BaseActivity() {
         val previousViewId = intent.getIntExtra("id",1)
         if (previousViewId == 1) {
             mOfficeAdapter = OfficeAdapters(mContext, Office.shared.guList)
+            mOfficeAdapter.itemClick = object : OfficeAdapters.ItemClick{
+                override fun onClick(view: View, position: Int) {
+                    officeDetailView.putExtra("clickedOfficeNo", position)
+                    officeDetailView.putExtra("id", 1)
+                    startActivity(officeDetailView)
+                }
+
+            }
+
             val lm = GridLayoutManager(mContext,4)
             officeRecyclerView.layoutManager = lm
 
         } else {
             mOfficeAdapter = OfficeAdapters(mContext, Office.shared.taxList)
+            mOfficeAdapter.itemClick = object : OfficeAdapters.ItemClick{
+                override fun onClick(view: View, position: Int) {
+                    officeDetailView.putExtra("clickedOfficeNo", position)
+                    officeDetailView.putExtra("id", 2)
+                    startActivity(officeDetailView)
+
+                }
+
+            }
+
             val lm = GridLayoutManager(mContext,3)
             officeRecyclerView.layoutManager = lm
         }
+
         officeRecyclerView.adapter = mOfficeAdapter
         officeRecyclerView.setHasFixedSize(true)
 

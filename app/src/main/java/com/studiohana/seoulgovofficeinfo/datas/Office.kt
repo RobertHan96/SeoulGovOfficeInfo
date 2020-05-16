@@ -1,6 +1,11 @@
 package com.studiohana.seoulgovofficeinfo.datas
 
-class Office(val name : String, val tel : String, val address : String, val publicSite : String, val lat : Double, val lng : Double) {
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+class Office(val name : String, val tel : String, val address : String, val publicSite : String, val lat : Double, val lng : Double) :
+    Parcelable {
     object  shared {
         val guList  = arrayListOf<Office>(
             Office("종로", "02-2148-1111", "서울특별시 종로구 삼봉로43",

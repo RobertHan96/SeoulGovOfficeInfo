@@ -1,5 +1,8 @@
 package com.studiohana.seoulgovofficeinfo.datas
 
+import kotlinx.android.parcel.Parcelize
+
+
 class OfficeTask(val id : Int, val task : String ) {
     object  shared {
         val guItems  = arrayListOf<OfficeTask>(
