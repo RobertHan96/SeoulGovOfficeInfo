@@ -5,9 +5,8 @@
     android:layout_height="wrap_content">
 
     <Button
-        android:layout_margin="1dp"
+        android:layout_margin="5dp"
         android:id="@+id/officeNameText"
-        android:padding="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
@@ -18,3 +17,5 @@
         android:autoSizeMaxTextSize="20sp" />
 
 </LinearLayout>
+
+

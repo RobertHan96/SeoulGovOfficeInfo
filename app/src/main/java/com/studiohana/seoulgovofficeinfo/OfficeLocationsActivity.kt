@@ -14,7 +14,6 @@ import kotlinx.android.synthetic.main.activity_office_locations.*
 
 
 class OfficeLocationsActivity : BaseActivity() {
-    var officeList = ArrayList<Office>()
     private lateinit var mOfficeAdapter : OfficeAdapters
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,11 +37,10 @@ class OfficeLocationsActivity : BaseActivity() {
                 override fun onClick(view: View, position: Int) {
                     officeDetailView.putExtra("clickedOfficeNo", position)
                     officeDetailView.putExtra("id", 1)
+                    officeDetailView.putExtra("publicSite", Office.shared.guList[position].publicSite)
                     startActivity(officeDetailView)
                 }
-
             }
-
             val lm = GridLayoutManager(mContext,4)
             officeRecyclerView.layoutManager = lm
 
@@ -53,15 +51,11 @@ class OfficeLocationsActivity : BaseActivity() {
                     officeDetailView.putExtra("clickedOfficeNo", position)
                     officeDetailView.putExtra("id", 2)
                     startActivity(officeDetailView)
-
                 }
-
             }
-
             val lm = GridLayoutManager(mContext,3)
             officeRecyclerView.layoutManager = lm
         }
-
         officeRecyclerView.adapter = mOfficeAdapter
         officeRecyclerView.setHasFixedSize(true)
 

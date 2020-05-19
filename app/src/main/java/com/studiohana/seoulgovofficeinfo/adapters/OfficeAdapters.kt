@@ -17,11 +17,11 @@ import com.studiohana.seoulgovofficeinfo.datas.OfficeTask
 
 class OfficeAdapters (val mContext: Context, val mList : ArrayList<Office>) :
     RecyclerView.Adapter<OfficeAdapters.Holder>() {
+    var itemClick : ItemClick? = null
 
     interface ItemClick {
         fun onClick(view : View, position: Int)
     }
-    var itemClick : ItemClick? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OfficeAdapters.Holder {
         val view = LayoutInflater.from(mContext).inflate(R.layout.office_name_item, parent, false)
@@ -35,11 +35,10 @@ class OfficeAdapters (val mContext: Context, val mList : ArrayList<Office>) :
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder?.bind(mList[position], mContext)
-        holder.itemView.setOnClickListener { v ->
-            itemClick?.onClick(v, position)
+        holder.officeName.setOnClickListener {
+            itemClick?.onClick(it, position)
         }
     }
-
 
     inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val officeName = itemView.findViewById<TextView>(R.id.officeNameText)
@@ -50,4 +49,5 @@ class OfficeAdapters (val mContext: Context, val mList : ArrayList<Office>) :
             }
         }
     }
+
 }
