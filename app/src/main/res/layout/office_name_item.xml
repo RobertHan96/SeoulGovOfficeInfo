@@ -5,16 +5,16 @@
     android:layout_height="wrap_content">
 
     <Button
+        android:padding="5dp"
         android:layout_margin="5dp"
         android:id="@+id/officeNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
         android:text="@string/office_detail_name"
         android:textColor="#000000"
         android:background="@drawable/btn_background"
         android:autoSizeTextType="uniform"
-        android:autoSizeMaxTextSize="20sp" />
+        android:autoSizeMaxTextSize="17sp" />
 
 </LinearLayout>
 

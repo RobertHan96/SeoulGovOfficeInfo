@@ -22,15 +22,12 @@
             android:textSize="40sp"
             android:text="@string/office_detail_name"/>
 
-        <TextView
-            android:layout_width="20dp"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"/>
 
         <Button
+            android:layout_marginLeft="10dp"
             android:id="@+id/officeWebViewBtn"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:background="@drawable/internet"
             />
 
@@ -41,7 +38,7 @@
         android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:text="@string/office_detail_tel"/>
 
     <TextView
@@ -49,7 +46,7 @@
         android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:text="@string/office_detail_address"/>
 
     <fragment
