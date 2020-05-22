@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="40dp"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
+    android:padding="10dp"
     android:orientation="vertical"
     tools:context=".OfficeIntroActivity">
 
@@ -14,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/task_view_name"
-        android:padding="4dp"
+        android:layout_marginTop="30dp"
         android:textStyle="bold"
         android:textSize="24sp"
         android:textColor="#000"/>

@@ -5,13 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-
+    android:padding="10dp"
+    android:background="@color/appleSystemBackGround"
     tools:context=".OfficeLocationsActivity">
 
     <TextView
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

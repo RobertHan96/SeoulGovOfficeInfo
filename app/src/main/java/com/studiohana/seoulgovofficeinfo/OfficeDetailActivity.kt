@@ -76,7 +76,7 @@ class OfficeDetailActivity : BaseActivity() {
             }
 
             officeName.text = Office.shared.taxList[previousClickedItemId].name
-            officeTel.text = Office.shared.taxList[previousClickedItemId].tel
+            officeTel.text = "TEL.${Office.shared.taxList[previousClickedItemId].tel}"
             officeAddress.text = Office.shared.taxList[previousClickedItemId].address
         }
     }

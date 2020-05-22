@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/appleSystemBackGround"
     tools:context=".MainActivity">
 
     <TextView
@@ -13,7 +14,7 @@
         android:layout_weight="1"
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:autoSizeMaxTextSize="34sp"
         android:autoSizeTextType="uniform"
         android:text="@string/main_view_name"
@@ -25,7 +26,7 @@
             android:layout_width="match_parent"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:layout_weight="8"
+            android:layout_weight="6"
             android:layout_height="0dp">
 
             <LinearLayout
@@ -60,7 +61,8 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/btn_background"
                     android:autoSizeTextType="uniform"
-                    android:autoSizeMaxTextSize="25sp"
+                    android:autoSizeMaxTextSize="20sp"
+                    android:singleLine="true"
                     android:text="@string/tax_office_task"/>
             </LinearLayout>
 
@@ -96,7 +98,8 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/btn_background"
                     android:autoSizeTextType="uniform"
-                    android:autoSizeMaxTextSize="25sp"
+                    android:autoSizeMaxTextSize="20sp"
+                    android:singleLine="true"
                     android:text="@string/gu_office_task"/>
             </LinearLayout>
 
@@ -105,7 +108,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="3"/>
 
 <!--전체 화면 레이아웃-->
 </LinearLayout>
