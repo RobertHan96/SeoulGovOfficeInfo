@@ -33,6 +33,8 @@ class OfficeIntroActivity : BaseActivity() {
             mTaskAdapter = TaskAdapters(mContext, R.layout.task_list_item, OfficeTask.shared.taxItems)
         }
         taskListView.adapter = mTaskAdapter
+        taskListView.translationX = -400f
+        taskListView.animate().translationX(0f).setDuration(500)
 
     }
 
