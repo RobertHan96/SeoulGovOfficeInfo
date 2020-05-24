@@ -18,24 +18,28 @@ class MainActivity : BaseActivity() {
 
     override fun setupEvents() {
         taxOfficeIntroBtn.setOnClickListener {
+            sendUserSelectItemEvents("2", "taxOfficeIntro")
             val taxOfficeIntroIntent = Intent(mContext, OfficeIntroActivity::class.java)
             taxOfficeIntroIntent.putExtra("id",2)
             startActivity(taxOfficeIntroIntent)
         }
 
         guOfficeIntroBtn.setOnClickListener {
+            sendUserSelectItemEvents("1", "guOfficeIntro")
             val guOfficeIntroIntent = Intent(mContext, OfficeIntroActivity::class.java)
             guOfficeIntroIntent.putExtra("id",1)
             startActivity(guOfficeIntroIntent)
         }
 
         findGuOfficeBtn.setOnClickListener {
+            sendUserSelectItemEvents("1", "guOfficeList")
             val guOfficeListIntent = Intent(mContext, OfficeLocationsActivity::class.java)
             guOfficeListIntent.putExtra("id", 1)
             startActivity(guOfficeListIntent)
         }
 
         findTaxOfficeBtn.setOnClickListener {
+            sendUserSelectItemEvents("2", "taxOfficeList")
             val taxOfficeListIntent = Intent(mContext, OfficeLocationsActivity::class.java)
             taxOfficeListIntent.putExtra("id",2)
             startActivity(taxOfficeListIntent)
@@ -46,12 +50,12 @@ class MainActivity : BaseActivity() {
 
     }
 
-//    fun sendUserSelectItemEvents(selectedItem : String) {
-//        val bundle = Bundle()
-//        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, id)
-//        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, name)
-//        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image")
-//        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle)
-//    }
+    fun sendUserSelectItemEvents(selectedID : String ,selectedItem : String) {
+        val bundle = Bundle()
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, selectedID)
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, selectedItem )
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "item")
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle)
+    }
 
 }
