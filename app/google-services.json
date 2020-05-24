@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "497740256432",
+    "firebase_url": "https://seoulgovofficeinfo.firebaseio.com",
+    "project_id": "seoulgovofficeinfo",
+    "storage_bucket": "seoulgovofficeinfo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:497740256432:android:c84050ad8b993ab36cd775",
+        "android_client_info": {
+          "package_name": "com.studiohana.seoulgovofficeinfo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "497740256432-oc2dop577esnguu7lhk9cr6j5hcaus9b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.studiohana.seoulgovofficeinfo",
+            "certificate_hash": "a33d6aeb166b8a022330fc0cb3c99d53a1938f76"
+          }
+        },
+        {
+          "client_id": "497740256432-b3tknl3ld2q7ra4l9r72ddhn2vt6cjft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPvzmoGQcgbSxS2oP81lIovFYevTUqCCY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "497740256432-b3tknl3ld2q7ra4l9r72ddhn2vt6cjft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
