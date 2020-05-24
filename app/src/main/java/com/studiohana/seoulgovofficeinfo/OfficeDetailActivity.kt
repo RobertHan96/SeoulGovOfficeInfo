@@ -1,10 +1,15 @@
 package com.studiohana.seoulgovofficeinfo
 
+import android.Manifest
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.annotation.UiThread
 import androidx.lifecycle.Transformations.map
+import com.gun0912.tedpermission.PermissionListener
+import com.gun0912.tedpermission.TedPermission
 import com.naver.maps.geometry.LatLng
 import com.naver.maps.map.CameraUpdate
 import com.naver.maps.map.MapFragment
@@ -15,6 +20,7 @@ import kotlinx.android.synthetic.main.activity_office_detail.*
 import kotlinx.android.synthetic.main.activity_office_public_site.*
 
 class OfficeDetailActivity : BaseActivity() {
+    lateinit var nowOfficeTel : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +43,24 @@ class OfficeDetailActivity : BaseActivity() {
                 webViewIntent.putExtra("publicSite", Office.shared.taxList[previousClickedItemId].publicSite)
                 startActivity(webViewIntent)
             }
+        }
+
+        officeTel.setOnClickListener {
+            val permissionListener = object  : PermissionListener {
+                override fun onPermissionGranted() {
+                    val uri = Uri.parse("tel:${nowOfficeTel}")
+                    val callIntent = Intent(Intent.ACTION_CALL, uri)
+                    startActivity(callIntent)
+                }
+
+                override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {
+                    Toast.makeText(mContext, "통화연결을 위해 권한을 허용해주세요.", Toast.LENGTH_SHORT).show()
+                }
+
+            }
+
+            TedPermission.with(mContext).setPermissionListener(permissionListener).setDeniedMessage("설정에서 통화 권한을 허용해주세요.")
+                .setPermissions(Manifest.permission.CALL_PHONE).check()
         }
 
     }
@@ -63,9 +87,11 @@ class OfficeDetailActivity : BaseActivity() {
             }
 
             officeName.text = Office.shared.guList[previousClickedItemId].name
-            officeTel.text = Office.shared.guList[previousClickedItemId].tel
+            officeTel.text = "TEL.${Office.shared.guList[previousClickedItemId].tel}"
             officeAddress.text = Office.shared.guList[previousClickedItemId].address
-        } else {
+            nowOfficeTel = Office.shared.guList[previousClickedItemId].tel
+        }
+        else {
             val currentOfficeLat = Office.shared.taxList[previousClickedItemId].lat
             val currentOfficeLng = Office.shared.taxList[previousClickedItemId].lng
             marker.position = LatLng(currentOfficeLat, currentOfficeLng)
@@ -78,7 +104,8 @@ class OfficeDetailActivity : BaseActivity() {
             officeName.text = Office.shared.taxList[previousClickedItemId].name
             officeTel.text = "TEL.${Office.shared.taxList[previousClickedItemId].tel}"
             officeAddress.text = Office.shared.taxList[previousClickedItemId].address
-        }
+            nowOfficeTel = Office.shared.taxList[previousClickedItemId].tel
+            }
     }
 
 }

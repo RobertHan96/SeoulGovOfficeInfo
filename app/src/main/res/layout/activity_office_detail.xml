@@ -39,6 +39,7 @@
 
     <TextView
         android:id="@+id/officeTel"
+        android:clickable="true"
         android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
