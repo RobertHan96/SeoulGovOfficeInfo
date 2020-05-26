@@ -10,15 +10,23 @@
     tools:context=".OfficeLocationsActivity">
 
     <TextView
-        android:layout_marginTop="30dp"
+        android:id="@+id/locationsViewTitleText"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:autoSizeMaxTextSize="24sp"
-        android:autoSizeTextType="uniform"
+        android:gravity="center_vertical"
+        android:textSize="20sp"
         android:text="@string/locations_view_name"
         android:textColor="#000"
+        android:maxLines="1"
         android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="10dp"
+        android:background="#000"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/officeRecyclerView"

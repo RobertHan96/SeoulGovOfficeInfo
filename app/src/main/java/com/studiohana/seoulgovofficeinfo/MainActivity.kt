@@ -3,6 +3,8 @@ package com.studiohana.seoulgovofficeinfo
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
+import androidx.core.widget.TextViewCompat
 import com.google.firebase.analytics.FirebaseAnalytics
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -47,6 +49,11 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setValues() {
+        TextViewCompat.setAutoSizeTextTypeWithDefaults(mainViewTitleText, TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM )
+        TextViewCompat.setAutoSizeTextTypeWithDefaults(guOfficeIntroBtn, TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM )
+        TextViewCompat.setAutoSizeTextTypeWithDefaults(findGuOfficeBtn, TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM )
+        TextViewCompat.setAutoSizeTextTypeWithDefaults(taxOfficeIntroBtn, TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM )
+        TextViewCompat.setAutoSizeTextTypeWithDefaults(findTaxOfficeBtn, TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM )
 
     }
 

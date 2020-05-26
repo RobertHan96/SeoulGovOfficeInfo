@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.core.widget.TextViewCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -29,6 +30,7 @@ class OfficeLocationsActivity : BaseActivity() {
     }
 
     override fun setValues() {
+        TextViewCompat.setAutoSizeTextTypeWithDefaults(locationsViewTitleText, TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM )
         val officeDetailView = Intent(mContext, OfficeDetailActivity::class.java)
         val previousViewId = intent.getIntExtra("id",1)
         if (previousViewId == 1) {

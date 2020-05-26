@@ -9,17 +9,27 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/mainViewTitleText"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:gravity="center_vertical"
         android:layout_marginLeft="10dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="30dp"
-        android:autoSizeMaxTextSize="34sp"
-        android:autoSizeTextType="uniform"
+        android:layout_marginRight="30dp"
+        android:textSize="24sp"
+        android:maxLines="1"
         android:text="@string/main_view_name"
         android:textColor="#000"
         android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#000"/>
 
         <LinearLayout
             android:orientation="vertical"
@@ -43,8 +53,8 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:background="@drawable/btn_background"
-                    android:autoSizeTextType="uniform"
-                    android:autoSizeMaxTextSize="25sp"
+                    android:textSize="18sp"
+                    android:maxLines="1"
                     android:text="@string/find_tax_office"/>
 
                 <TextView
@@ -60,9 +70,8 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:background="@drawable/btn_background"
-                    android:autoSizeTextType="uniform"
-                    android:autoSizeMaxTextSize="20sp"
-                    android:singleLine="true"
+                    android:textSize="18sp"
+                    android:maxLines="1"
                     android:text="@string/tax_office_task"/>
             </LinearLayout>
 
@@ -80,8 +89,8 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:background="@drawable/btn_background"
-                    android:autoSizeTextType="uniform"
-                    android:autoSizeMaxTextSize="25sp"
+                    android:textSize="18sp"
+                    android:maxLines="1"
                     android:text="@string/find_gu_office"/>
 
                 <TextView
@@ -97,9 +106,8 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:background="@drawable/btn_background"
-                    android:autoSizeTextType="uniform"
-                    android:autoSizeMaxTextSize="20sp"
-                    android:singleLine="true"
+                    android:textSize="18sp"
+                    android:maxLines="1"
                     android:text="@string/gu_office_task"/>
             </LinearLayout>
 
