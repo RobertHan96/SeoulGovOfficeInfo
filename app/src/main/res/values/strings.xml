@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SeoulGovOfficeInfo</string>
+    <string name="app_name">세무서 구청 찾기</string>
     <string name="main_view_name">서울시내 관공서 정보</string>
     <string name="locations_view_name">지역별</string>
     <string name="task_view_name">담당 업무</string>
