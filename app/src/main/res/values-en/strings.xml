@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gov. offices in Seoul</string>
+    <string name="main_view_name">Gov. offices in Seoul</string>
+    <string name="locations_view_name">By region</string>
+    <string name="task_view_name">Responsibilities</string>
+    <string name="find_tax_office">Find the Tax Office</string>
+    <string name="find_gu_office">Find the Gu Office</string>
+    <string name="gu_office_task">Gu office Responsibilities</string>
+    <string name="tax_office_task">Tax office Responsibilities</string>
+    <string name="office_detail_name">구</string>
+    <string name="office_detail_tel">TEL.02-123-4567</string>
+    <string name="office_detail_address">서울시 OO구</string>
+</resources>
